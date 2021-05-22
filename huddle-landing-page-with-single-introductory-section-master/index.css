@@ -1,0 +1,282 @@
+:root {
+    --violet: hsl(257, 40%, 49%);
+    --magenta: hsl(300, 69%, 71%);
+    --ffbody: 'Open Sans', sans-serif;
+    --ffhead: 'Poppins', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    overflow: hidden;
+}
+
+.container {
+    background-image: url('bg-desktop.svg');
+    background-color: var(--violet);
+    background-position: -5px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    max-width: 100vw;
+    width: 100%;
+    height: 100vh;
+}
+
+.logo {
+    padding: 2.5rem 6rem;
+}
+
+section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding:0.5rem 6rem;
+}
+
+.section-1 {
+    flex-basis: 55%;
+    position: relative;
+    left: -1000px;
+    animation: left 2s linear .5s 1 forwards;
+}
+
+@keyframes left {
+    0% {
+        left: -1000px;
+    }
+
+    100% {
+        left: 0;
+    }
+}
+
+.section-2 {
+    flex-basis: 42%;
+    padding-bottom: 5rem;
+    position: relative;
+    right: -1000px;
+    animation: right 2s linear .5s 1 forwards;
+}
+
+@keyframes right {
+    0% {
+        right: -1000px;
+    }
+
+    100% {
+        right: 0;
+    }
+}
+
+.section-2 h1 {
+    font-family: var(--ffhead);
+    font-weight: 600;
+    font-size: 2.8rem;
+    color: #fff;
+    line-height: 1.5;
+    margin: 1.5rem 0;
+}
+
+.section-2 p {
+    font-family: var(--ffbody);
+    font-size: 1.12rem;
+    color: #fff;
+    font-weight: 400;
+    margin: 1.5rem 0;
+    line-height: 1.4;
+}
+
+.section-2 button {
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    font-weight: 400;
+    padding: 1rem 4.2rem;
+    background-color: var(--magenta);
+    color: #fff;
+    font-size: 1.12rem;
+    font-family: var(--ffbody);
+    border-radius: 35px;
+    box-shadow: 4px 4px 8px #3d3841;
+    margin: 1.5rem 0;
+    transition: 0.3s ease-in-out 0.1s;
+}
+
+.section-2 button:hover {
+    opacity: 0.85;
+    box-shadow: 1px 2px 6px #454149;
+}
+
+.social {
+    padding: 0.3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: #fff;
+}
+
+nav ul {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    list-style: none;
+}
+
+li {
+    opacity: 0;
+    animation: show 2s linear 2.5s 1 forwards;
+}
+
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+nav ul li {
+    padding: 0 1rem;
+}
+
+nav ul li a {
+    font-size: 1.18rem;
+    color: #fff;
+    text-decoration: none;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
+}
+
+.border {
+    height: 3rem;
+    width: 3rem;
+    border: 2px solid #fff;
+    text-align: center;
+    line-height: 2.5;
+    border-radius: 50%;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
+}
+
+.border:hover {
+    height: 3.12rem;
+    width: 3.12rem;
+}
+
+ul li a:hover {
+    color: var(--magenta);
+}
+
+.attribution {
+    font-family: var(--ffbody);
+    font-weight: 400;
+    transition: 0.4s cubic-bezier(0.075, 0.82, 0.165, 1) 0.1s;
+}
+
+.attribution:hover {
+    letter-spacing: 2px;
+}
+
+/* media queries */
+
+@media only screen and (max-width:430px) {
+
+    html {
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    .container {
+        background-image: url('bg-mobile.svg');
+        background-color: var(--violet);
+        background-position: top;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: auto;
+    }
+
+    .logo {
+        padding:0.8rem 1.5rem;
+    }
+
+    .logo img {
+        max-width: 40vw;
+        width: 100%;
+    }
+
+    section {
+        display: block;
+        margin: 0.8rem auto 0rem;
+        padding: 1rem 2.2rem;
+    }
+
+    .section-1 img {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .section-2 {
+        text-align: center;
+    }
+
+    .section-2 h1 {
+        font-family: var(--ffhead);
+        font-weight: 600;
+        color: #fff;
+        line-height: 1.1;
+        margin: 2.8rem 0 0;
+        font-size: 1.3rem;
+    }
+
+    .section-2 p {
+        font-size: 0.9rem;
+        margin: 1rem 0 0;
+    }
+
+    .section-2 button {
+        padding: 0.8rem 4rem;
+        margin: 1rem 0 0;
+        font-size: 0.9rem;
+    }
+
+    .social {
+        display: block;
+        text-align: center;
+        padding: 0 2.2rem ;
+    }
+
+    .social p {
+        font-size: 0.6rem;
+        padding: 0.5rem;
+    }
+
+    nav {
+        margin-bottom: 0.2rem;
+    }
+
+    nav ul {
+        padding: 0 5rem;
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .border {
+        line-height: 2;
+        width: 2rem;
+        height: 2rem;
+    }
+
+    .border:hover {
+        height: 2.12rem;
+        width: 2.12rem;
+    }
+}
